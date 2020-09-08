@@ -14,7 +14,7 @@ class XyloViewController: UIViewController {
     var player:AVAudioPlayer?
     
     @IBAction func CKeyPressed(_ sender: UIButton) {
-        playSound()
+        playSound(letter:(sender.titleLabel?.text!)!)
     }
     
     override func viewDidLoad() {
@@ -25,12 +25,49 @@ class XyloViewController: UIViewController {
     
    
         
-        func playSound() {
-            let url = Bundle.main.url(forResource: "C", withExtension: "wav")
+    func playSound(letter:String) {
+        
+        switch letter {
+        case "A":
+            let url = Bundle.main.url(forResource: "\(letter)", withExtension: "wav")
+                    player = try! AVAudioPlayer(contentsOf: url!)
+                    player?.play()
+            
+        case "B":
+            let url = Bundle.main.url(forResource: "\(letter)", withExtension: "wav")
+                    player = try! AVAudioPlayer(contentsOf: url!)
+                    player?.play()
+            
+        
+            
+        case "C":
+        
+            let url = Bundle.main.url(forResource: "\(letter)", withExtension: "wav")
             player = try! AVAudioPlayer(contentsOf: url!)
             player?.play()
+        case "D":
+            let url = Bundle.main.url(forResource: "\(letter)", withExtension: "wav")
+                    player = try! AVAudioPlayer(contentsOf: url!)
+                    player?.play()
+            
+        case "E":
+            let url = Bundle.main.url(forResource: "\(letter)", withExtension: "wav")
+                    player = try! AVAudioPlayer(contentsOf: url!)
+                    player?.play()
+        
+        case "F":
+            let url = Bundle.main.url(forResource: "\(letter)", withExtension: "wav")
+                    player = try! AVAudioPlayer(contentsOf: url!)
+                    player?.play()
+            
+        case "G":
+            let url = Bundle.main.url(forResource: "\(letter)", withExtension: "wav")
+                    player = try! AVAudioPlayer(contentsOf: url!)
+                    player?.play()
+        default:
+            return 
                     
-        }
+        } }
     }
 
         
