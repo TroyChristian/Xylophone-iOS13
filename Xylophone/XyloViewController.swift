@@ -15,6 +15,10 @@ class XyloViewController: UIViewController {
     
     @IBAction func CKeyPressed(_ sender: UIButton) {
         playSound(letter:(sender.titleLabel?.text!)!)
+        sender.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            sender.alpha = 1.0 
+        }
     }
     
     override func viewDidLoad() {
